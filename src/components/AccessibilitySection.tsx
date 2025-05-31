@@ -2,6 +2,8 @@
 import React from 'react';
 import { Users, Shield } from 'lucide-react';
 import ChartContainer from './ChartContainer';
+import sharesolo from '../images/img61.png';
+import wav from '../images/img62.png';
 
 const AccessibilitySection = () => {
   return (
@@ -17,9 +19,12 @@ const AccessibilitySection = () => {
           description="Service type distribution"
           icon={<Users className="w-5 h-5" />}
         >
-          <div className="text-center text-slate-400">
-            <p className="text-lg">👥 Your ride sharing chart</p>
-            <p className="text-sm mt-2">Drop your chart image here</p>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src={sharesolo} // replace with your actual image path
+              alt="Hourly trip volume chart"
+              className="h-auto"
+            />
           </div>
         </ChartContainer>
         
@@ -28,9 +33,12 @@ const AccessibilitySection = () => {
           description="Wheelchair accessible vehicle demand"
           icon={<Shield className="w-5 h-5" />}
         >
-          <div className="text-center text-slate-400">
-            <p className="text-lg">♿ Your accessibility chart</p>
-            <p className="text-sm mt-2">Drop your chart image here</p>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src={wav} // replace with your actual image path
+              alt="Hourly trip volume chart"
+              className="h-auto"
+            />
           </div>
         </ChartContainer>
       </div>

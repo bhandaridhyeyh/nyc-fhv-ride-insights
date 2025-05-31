@@ -2,6 +2,9 @@
 import React from 'react';
 import { MapPin, Navigation } from 'lucide-react';
 import ChartContainer from './ChartContainer';
+import pl from '../images/img41.png';
+import dl from '../images/img42.png';
+import popular from '../images/img43.png';
 
 const LocationSection = () => {
   return (
@@ -17,9 +20,12 @@ const LocationSection = () => {
           description="Most popular pickup spots"
           icon={<MapPin className="w-5 h-5" />}
         >
-          <div className="text-center text-slate-400">
-            <p className="text-lg">📍 Your pickup locations chart</p>
-            <p className="text-sm mt-2">Drop your chart image here</p>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src={pl} // replace with your actual image path
+              alt="Hourly trip volume chart"
+              className="h-auto"
+            />
           </div>
         </ChartContainer>
         
@@ -28,9 +34,12 @@ const LocationSection = () => {
           description="Most popular destinations"
           icon={<Navigation className="w-5 h-5" />}
         >
-          <div className="text-center text-slate-400">
-            <p className="text-lg">🎯 Your dropoff locations chart</p>
-            <p className="text-sm mt-2">Drop your chart image here</p>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src={dl} // replace with your actual image path
+              alt="Hourly trip volume chart"
+              className="h-auto"
+            />
           </div>
         </ChartContainer>
         
@@ -39,9 +48,12 @@ const LocationSection = () => {
           description="Most frequent pickup-dropoff combinations"
           className="lg:col-span-2"
         >
-          <div className="text-center text-slate-400">
-            <p className="text-lg">🗺️ Your route pairs visualization</p>
-            <p className="text-sm mt-2">Drop your chart image here</p>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src={popular} // replace with your actual image path
+              alt="Hourly trip volume chart"
+              className="h-auto"
+            />
           </div>
         </ChartContainer>
       </div>

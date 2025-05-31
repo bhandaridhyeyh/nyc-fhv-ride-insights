@@ -12,22 +12,10 @@ const DashboardHeader = () => {
     },
     {
       title: "Revenue Generated",
-      value: "$2.8B",
+      value: "$7.7B+",
       icon: TrendingUp,
       color: "text-green-400"
     },
-    {
-      title: "Unique Locations",
-      value: "12.5K",
-      icon: MapPin,
-      color: "text-purple-400"
-    },
-    {
-      title: "Active Vehicles",
-      value: "85K",
-      icon: Users,
-      color: "text-orange-400"
-    }
   ];
 
   return (
@@ -41,7 +29,7 @@ const DashboardHeader = () => {
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {stats.map((stat, index) => (
           <div 
             key={stat.title}

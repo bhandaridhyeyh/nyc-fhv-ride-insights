@@ -2,6 +2,8 @@
 import React from 'react';
 import { Building2, PieChart, BarChart3 } from 'lucide-react';
 import ChartContainer from './ChartContainer';
+import trips from '../images/img51.png';
+import revenue from '../images/img52.png';
 
 const CompanySection = () => {
   return (
@@ -17,9 +19,12 @@ const CompanySection = () => {
           description="Trip volume comparison"
           icon={<BarChart3 className="w-5 h-5" />}
         >
-          <div className="text-center text-slate-400">
-            <p className="text-lg">🚗 Your company comparison chart</p>
-            <p className="text-sm mt-2">Drop your chart image here</p>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src={trips} // replace with your actual image path
+              alt="Hourly trip volume chart"
+              className="h-auto"
+            />
           </div>
         </ChartContainer>
         
@@ -28,9 +33,12 @@ const CompanySection = () => {
           description="Revenue and market share insights"
           icon={<PieChart className="w-5 h-5" />}
         >
-          <div className="text-center text-slate-400">
-            <p className="text-lg">📊 Your market share chart</p>
-            <p className="text-sm mt-2">Drop your chart image here</p>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src={revenue} // replace with your actual image path
+              alt="Hourly trip volume chart"
+              className="h-auto"
+            />
           </div>
         </ChartContainer>
       </div>
