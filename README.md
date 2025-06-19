@@ -1,73 +1,113 @@
-# Welcome to your Lovable project
+# 🚕💡 𝗕𝗶𝗴 𝗗𝗮𝘁𝗮 + 𝗔𝗪𝗦 = 𝗦𝗺𝗮𝗿𝘁 𝗗𝗲𝗰𝗶𝘀𝗶𝗼𝗻𝘀 𝗶𝗻 𝗨𝗿𝗯𝗮𝗻 𝗠𝗼𝗯𝗶𝗹𝗶𝘁𝘆!
 
-## Project info
+### Dashboard Link: _https://fhv-ride-insights.vercel.app_
 
-**URL**: https://lovable.dev/projects/4c4a4d24-9b40-42f1-b68b-7d17aaa7737b
+This project is a data-driven business intelligence dashboard developed to optimize ride-hailing operations and improve urban service planning. Using the massive **5.4 GB NYC For-Hire Vehicle (FHV)** dataset containing **~239 million records**, it uncovers actionable insights on passenger demand, peak hours, route patterns, revenue distribution, and operational efficiency through **big data analysis**, **interactive visualizations**, and **predictive modeling** with **time series forecasting**.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack & Tools
 
-**Use Lovable**
+- **Python** (Pandas, PyAthena, Matplotlib, Seaborn, Plotly)
+- **AWS S3** – Storage for large Parquet dataset
+- **AWS Athena** – Scalable querying over big data using SQL
+- **AWS Cloud9 + Jupyter Notebook** – For interactive data visualization
+- **AWS SageMaker AI** – For predictive ML modeling
+- **Exponential Smoothing / ML Models** – For time series forecasting
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4c4a4d24-9b40-42f1-b68b-7d17aaa7737b) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📊 Features & Highlights
 
-**Use your preferred IDE**
+- 🔍 **Exploratory Data Analysis & Trends:**
+  - Hourly, Daily, Weekly, Monthly trip patterns
+  - Peak zones and time slots for pickups/dropoffs
+  - Revenue and driver compensation trends
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- 🧠 **Predictive Modeling Insights:**
+  - 🔢 **Demand Forecasting**: Optimal driver dispatch for zones
+  - 💸 **Fare Anomaly Detection**: Detect suspicious pricing
+  - 💼 **Company-wise Revenue Forecasting**: 24-hr business prediction
+  - 🕒 **Trip Duration Prediction**: Estimated arrival time per trip
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- 📈 **Interactive Visual Dashboards:**
+  - Built using Jupyter & visualization libraries to present data in intuitive formats
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📦 Dataset Overview
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Source: [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+- Format: **Parquet**
+- Size: **5.4 GB** | Rows: **239 million+** | Columns: **15**
+- Dataset captures:
+  - Dispatching base (e.g., Uber, Lyft)
+  - Timestamps (pickup/dropoff)
+  - Pickup/dropoff zones
+  - Trip miles, duration
+  - Fare breakdown (taxes, tolls, surcharges, tips)
+  - Final driver pay
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 🧮 Key Columns
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+| Column | Description |
+|--------|-------------|
+| `dispatching_base_num` | FHV base/company (e.g., Uber, Lyft) |
+| `pickup_datetime` / `dropoff_datetime` | Trip start/end time |
+| `pulocationid` / `dolocationid` | Pickup/Dropoff zone ID |
+| `trip_miles` / `trip_time` | Trip length and duration |
+| `base_passenger_fare` | Core fare excluding extras |
+| `tolls`, `tips`, `sales_tax`, `airport_fee`, `congestion_surcharge`, `bcf` | Additional charges |
+| `driver_pay` | Final driver payout |
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📌 Business Insights & Actions
 
-**Use GitHub Codespaces**
+| 📊 Metric | 💡 Insight | ✅ Action |
+|----------|------------|----------|
+| **Hourly Trip Volume** | Peak demand at 6–8 AM and 5–7 PM | Dispatch more drivers during commute hours |
+| **Busiest Days** | Fridays & Saturdays top in trips & revenue | Scale staff and dynamic pricing on weekends |
+| **Top Zones** | JFK Airport, Midtown Manhattan | Allocate fleet near airports and downtown |
+| **Trip Duration Pattern** | Stable except longer durations on weekends | Inform ETA predictions and surge planning |
+| **Revenue Trends** | Dec & summer months lead in revenue | Plan promos around seasonal highs |
+| **Tips Behavior** | Tips spike on weekend nights | Promote premium services during these hours |
+| **Uber vs Lyft** | Uber dominates in trips & revenue | Analyze Lyft’s pricing strategy |
+| **WAV Usage** | Steady demand near hospitals/daytime | Ensure accessibility vehicle availability |
+| **Anomaly Detection** | Fare mismatches spotted | Flag for billing or policy review |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🧪 Predictive Modeling with AWS SageMaker
 
-This project is built with:
+| Model | Goal | Sample Outcome |
+|-------|------|----------------|
+| 📍 **Demand Forecasting** | Estimate ride requests by zone/time | “2571 rides expected from zone 132 at 5 PM” |
+| ⚠️ **Fare Anomaly Detection** | Spot incorrect fare entries | “$42 for 64-min/155 miles → undercharged” |
+| 💼 **Revenue Forecasting** | Company-wise 24hr prediction | “Uber peaks 5–7 PM, Lyft surges at 6 AM” |
+| ⏱️ **ETA Prediction** | Predict trip duration | “ETA: 1024 secs ~ 17.07 mins” |
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🗂 AWS Setup Summary
 
-Simply open [Lovable](https://lovable.dev/projects/4c4a4d24-9b40-42f1-b68b-7d17aaa7737b) and click on Share -> Publish.
+- **S3 Bucket**: `nyc-fhv-data-bucket` | Region: `us-east-1`
+- **Athena DB/Table**: `nyc_fhv.trips`
+- **Cloud9 Environment**: `fhv-big-data-viz` | Instance: `t3.small`
+- **SageMaker Instance**: `MyNotebook` | Type: `ml.m4.large`
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🧑‍💻 Author
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+<table>
+  <tr>
+    <td>
+      <strong>Dhyey Bhandari</strong><br/>
+      📬 <a href="mailto:bhandaridhyeyh@gmail.com">bhandaridhyeyh@gmail.com</a><br/>
+      🌐 <a href="https://www.linkedin.com/in/dhyey-bhandari-a7070b245/" target="_blank">LinkedIn</a><br/>
+    </td>
+  </tr>
+</table>
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
